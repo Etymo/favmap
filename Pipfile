@@ -9,6 +9,7 @@ flask-script = "*"
 coverage = "*"
 pytest = "*"
 flask = "*"
+pytest-cov = "*"
 
 [dev-packages]
 
