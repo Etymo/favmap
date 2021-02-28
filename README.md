@@ -1,4 +1,6 @@
-# favmap
+# Favmap
+
+[![codecov](https://codecov.io/gh/Etymo/favmap/branch/main/graph/badge.svg?token=QOMM19C6SK)](https://codecov.io/gh/Etymo/favmap)
 
 Favmap is a beautiful map showing your favorite places.
 
