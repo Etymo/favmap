@@ -7,7 +7,7 @@ def login_required(view):
     @wraps(view)
     def inner(*args, **kwargs):
         if not session.get('logged_in'):
-            return redirect(url_for('login'))
+            return redirect(url_for('entry.login'))
         return view(*args, **kwargs)
     return inner
 
@@ -23,7 +23,7 @@ def login():
         else:
             session["logged_in"] = True
             flash("ログインしました")
-            return redirect(url_for("show_entries"))
+            return redirect(url_for("entry.show_entries"))
     return render_template("login.html")
 
 
@@ -31,4 +31,9 @@ def login():
 def logout():
     session.pop("logged_in", None)
     flash("ログアウトしました")
-    return redirect(url_for("show_entries"))
+    return redirect(url_for("entry.show_entries"))
+
+
+@app.errorhandler(404)
+def non_existant_route(error):
+    return redirect(url_for("login"))
