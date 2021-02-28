@@ -5,7 +5,7 @@ from flask_blog.models.entries import Entry
 from flask_blog.views.views import login_required
 from flask import Blueprint
 
-entry = Blueprint("entry", __name__)
+entry = Blueprint('entry', __name__)
 
 
 @entry.route("/")
