@@ -1,6 +1,7 @@
 import os
 from flask_blog import create_app, db
 import unittest
+import pytest
 import tempfile
 from flask_blog.scripts.db import InitDB, DropDB
 
