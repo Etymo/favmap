@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template, flash, session
-from flask_blog import app
+from flask import current_app as app
 from flask_blog import db
 from flask_blog.models.entries import Entry
 from flask_blog.views.views import login_required
