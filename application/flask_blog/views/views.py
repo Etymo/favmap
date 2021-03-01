@@ -40,4 +40,5 @@ def logout():
 
 @view.app_errorhandler(404)
 def non_existant_route(error):
+    flash("404エラー: ログイン画面に移動します")
     return redirect(url_for("view.login"))

@@ -45,6 +45,13 @@ class TestFlaskBlog(unittest.TestCase):
         rv = self.login('john', "defaultx")
         assert "パスワードが異なります".encode() in rv.data
 
+    def access_non_existant_route(self):
+        return self.client.get("/hogehoge", follow_redirects=True)
+
+    def test_non_existant_route(self):
+        rv = self.access_non_existant_route()
+        assert "404エラー: ログイン画面に移動します".encode() in rv.data
+
 
 if __name__ == "__main__":
     unittest.main()
