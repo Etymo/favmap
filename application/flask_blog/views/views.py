@@ -8,6 +8,9 @@ view = Blueprint("view", __name__)
 
 
 def login_required(view):
+    """
+    ログイン機能画面への遷移
+    """
     @wraps(view)
     def inner(*args, **kwargs):
         if not session.get('logged_in'):
